@@ -23,20 +23,20 @@ public class Race {
 	    	int speed = 999999999;
 	    	int bibNumber = 1;
 	    	
-	    	String name2 = ("Bobby");
+	    	String name2 = ("Joe");
 	    	int speed2 = 1;
 	    	int bibNumber2 = 2;
 	    	
 	    	System.out.println("");
 	    	System.out.println("");
 	    	
-	    	System.out.println("Name: "+name+" Speed: "+speed+" Number: "+bibNumber);
+	    	System.out.println("|Name: "+name+"| |Speed: "+speed+"| |Number: "+bibNumber+"| |Location: "+raceLocation+"| |Time: "+raceStartTime+"|");
 	    	
 	    	System.out.println("");
 	    	System.out.println("");
 	    	System.out.println("");
 	    	
-	    	System.out.println("Name: "+name2+" Speed: "+speed2+" Number: "+bibNumber2);
+	    	System.out.println("|Name: "+name2+"| |Speed: "+speed2+"| |Number: "+bibNumber2+"| |Location: "+raceLocation+"| |Time: "+raceStartTime+ "|");
 	    	
 	    	System.out.println("");
 	    	System.out.println("");

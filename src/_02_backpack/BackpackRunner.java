@@ -4,11 +4,9 @@ public class BackpackRunner {
 	public static void main(String[] args) {
 		new Backpack().packAndCheck();
 		
-		Backpack A = new Backpack();
+		Backpack supply = new Backpack();
 		
-		A.putInBackpack(supply);
-		A.putInBackpack(supply);
-		A.putInBackpack(supply);
-	
+		
+
 	}
 }
