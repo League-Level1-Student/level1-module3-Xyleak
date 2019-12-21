@@ -4,46 +4,26 @@ int birdYVelocity = 30;
 
 int gravity = 1; 
 
-int pipeX = 400;
-int pipeY = 100;
 int pipePost = 400;
-int upperPipeHeight;
+int upperPipeHeight = (int) random(100,700);
+int lowerPipeHeight = (int) random(100,800);
+int pipeGap = 50;
+int lowerY = upperPipeHeight + pipeGap;
 
 
-
-
-
-
-
-
-
-
-PImage back;
-PImage pipeBottom;
-PImage pipeTop;
-PImage bird;
 
 void setup(){
+  
+
 size(500,800);
 
-back = loadImage("flappyBackground.jpg");
-pipeBottom = loadImage("bottomPipe.png");
-pipeTop = loadImage("topPipe.png");
-bird = loadImage("bird.png");
-bird.resize(50,50);
 }
 
 
 
 
 void draw(){ 
-background(back);
-image (pipeBottom,250,375);
-image (pipeTop,250,-130);
-image (bird, 250, 300);
-            
-            
-            
+                     
 background(115,210,245); 
 fill(255,214,64); 
 stroke(0,0,0); 
@@ -51,6 +31,9 @@ ellipse(birdXpost,birdYpost-gravity,50,50);
 
 fill(58, 196, 27); 
 rect(pipePost,0,100,upperPipeHeight);
+
+fill(58, 196, 27); 
+rect(pipePost,700,100,lowerY);
 }
 
 ------------------------------------------------------------------------------------------------------------------------------
