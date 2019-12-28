@@ -1,40 +1,55 @@
-int birdXpost = 250; 
-int birdYpost = 400; 
-int birdYVelocity = 30; 
-
-int gravity = 1; 
-
-int pipePost = 400;
-int upperPipeHeight = (int) random(100,700);
-int lowerPipeHeight = (int) random(100,800);
-int pipeGap = 50;
-int lowerY = upperPipeHeight + pipeGap;
-
-
-
-void setup(){
+  int birdX = 250; 
+  int birdY = 400; 
+  int birdYVelocity = 30; 
+  int gravity = 1; 
   
-
-size(500,800);
-
-}
-
-
-
-
-void draw(){ 
+  int pipeX =500;  
+  int upperPipeHeight = (int) random(100,800);
+  int pipeGap = 100;
+  int lowerY = upperPipeHeight + pipeGap;
+   int speedX =60;
+  
+  PImage backgroundImage;
+  
+  void setup(){
+    
+  
+  size(500,800);
+  backgroundImage = loadImage("flap.jpg");
+  
+  }
+  
+  
+  
+  
+  void draw(){ 
                      
-background(115,210,245); 
-fill(255,214,64); 
-stroke(0,0,0); 
-ellipse(birdXpost,birdYpost-gravity,50,50);
-
-fill(58, 196, 27); 
-rect(pipePost,0,100,upperPipeHeight);
-
-fill(58, 196, 27); 
-rect(pipePost,700,100,lowerY);
-}
+    image(backgroundImage,0,0);
+    image(backgroundImage,0,0,width,height); 
+  fill(255,214,64); 
+  stroke(0,0,0); 
+  ellipse(birdX,birdY-gravity,50,50);
+  
+  
+  
+  
+  
+  pipeX+=speedX;
+  if(pipeX > 1){ speedX = -1;} 
+  if(pipeX < -100){ upperPipeHeight = (int) random(100,800);}
+  if(pipeX < -100){ pipeX = 500;}
+  
+  birdY+=gravity;
+  
+  
+  fill(58, 196, 27); 
+  rect(pipeX,0,100,upperPipeHeight);
+  rect(pipeX,lowerY,100,800);
+  
+if(mousePressed){
+ birdY =birdY - birdYVelocity; 
+  }
+  }
 
 ------------------------------------------------------------------------------------------------------------------------------
 Frogger
