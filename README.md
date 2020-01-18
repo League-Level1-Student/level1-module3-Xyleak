@@ -1,20 +1,23 @@
 
   int score = 0;
   int birdX = 250; 
-  int birdY = 400; 
+  int birdY = 100 -100; 
+  int birdI = 10;
+  
   int birdYVelocity = -10; 
   int gravity = 3; 
   
-  int ground = 700;
+  int ground = 616;
   int pipeX =500;  
   int upperPipeHeight = (int) random(10,400);
-  int pipeGap = 100;
+  int pipeGap = 150;
   int lowerPipeHeight = 800-upperPipeHeight-pipeGap;
   int lowerPipe = upperPipeHeight + pipeGap;
   int pipeWidth = 100;
-  int speedX =60;
+  int speedX =1;
   
   PImage backgroundImage;
+  PImage bird;
   
  
   boolean intersectsPipes() { 
@@ -40,25 +43,32 @@ boolean intersectsGround(){
   size(500,800);
       
   backgroundImage = loadImage("flap.png");
+ bird = loadImage("bird.png");
+ bird.resize(80,70);
+ //pipe2 = loadImage("pipe2.png"
  
- // pipe2 = loadImage("pipe2.png"
- // bird = loadImage("bird.ping);
   }
   
   
   
   
   void draw(){ 
+    
+    image(backgroundImage,0,0);
+    image(backgroundImage,0,0,width,height); 
+    
+    image(bird, 210, birdY);
+    
    if(intersectsGround()==true){
-     speedX=0;
-     gravity =0;
+     speedX=1;
+     gravity= 0;
      birdYVelocity = 0;
    }
     
     if(intersectsPipes()==true){
-    speedX = 0;
+    speedX = 1;
     birdYVelocity = 0; 
-    gravity = 0;
+    gravity = 10;
    
     }
     else if(intersectsPipes()==false){ 
@@ -67,17 +77,16 @@ boolean intersectsGround(){
  
   }
               
-    image(backgroundImage,0,0);
-    image(backgroundImage,0,0,width,height); 
+    
  
     
   fill(255,214,64); 
   stroke(0,0,0); 
-  ellipse(birdX,birdY-gravity,50,50);
+  ellipse(birdX,birdY-gravity,1,1);
   
   stroke(165, 224, 135);
   fill(165, 224, 135);
-  rect(0,700,500,10);
+  
   
   
   
