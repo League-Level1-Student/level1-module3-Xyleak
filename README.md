@@ -124,38 +124,41 @@ Frogger
 
 
 
-int frogX;
-int frogY = 550;
+int frogX = 450; 
+int frogY = 650;
+int frogJump = 50;
+int carX = 500;
+int carY = 500;
+int carDuwang = 50;
 
-void setup(){
-size(800,600);  
-}  
-  
+
+void setup(){ 
+size(900,700);
+}
+
 void draw(){
 background(140,213,255);
+fill(73,209,112); 
+ellipse(frogX,frogY,65,80);
 
-fill(73,209,112);
-ellipse(400,frogY,65,80);
-}  
-
-{
-      if(key == CODED){
-            if(keyCode == UP)
-            {
-                  //Frog Y position goes up
-            }
-            else if(keyCode == DOWN)
-            {
-                  //Frog Y position goes down
-            }
-            else if(keyCode == RIGHT)
-            {
-                  //Frog X position goes right
-            }
-            else if(keyCode == LEFT)
-            {
-                  //Frog X position goes left
-            }
-      }
+display();
 }
+
+void keyPressed(){
+if(key == CODED){
+if(keyCode == UP) { frogY = frogY - frogJump; } 
+else if(keyCode == DOWN) { frogY = frogY + frogJump; } 
+else if(keyCode == RIGHT) { frogX = frogX + frogJump;  } 
+else if(keyCode == LEFT) { frogX = frogX - frogJump; } 
+}
+}
+
+    void display()
+  {
+    fill(0,255,0);
+    rect(carX ,carY,  70, 50);
+  }
+
+
+
 
